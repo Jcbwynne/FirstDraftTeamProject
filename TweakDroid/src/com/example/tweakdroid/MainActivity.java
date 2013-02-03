@@ -5,6 +5,31 @@ import android.content.ContentValues;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.GregorianCalendar;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Locale;
+
+import android.app.Activity;
+import android.content.Context;
+import android.graphics.Color;
+import android.os.Bundle;
+import android.text.format.DateFormat;
+import android.util.Log;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.view.View.OnClickListener;
+import android.widget.BaseAdapter;
+import android.widget.Button;
+import android.widget.GridView;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 public class MainActivity extends Activity {
 /** Called when the activity is first created. */
@@ -13,30 +38,7 @@ public void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_main);
 
-    Cursor cursor=getContentResolver().query(Uri.parse("content://com.android.calendar/calendars"), new String[]{"_id", "displayname"}, null, null, null);
-
-    cursor.moveToFirst();
-    // Get calendars name
-    String calendarNames[] = new String[cursor.getCount()];
-    // Get calendars id
-    int[] calendarId = new int[cursor.getCount()];
-    for (int i = 0; i < calendarNames.length; i++)
-    {
-             calendarId[i] = cursor.getInt(0);
-             calendarNames[i] = cursor.getString(1);
-             cursor.moveToNext();
-    }
-    cursor.close();
-
-    ContentValues contentEvent = new ContentValues();
-     contentEvent.put("calendar_id", 1);
-     contentEvent.put("title", "Wedding");
-     contentEvent.put("eventLocation", "New York");                
-     contentEvent.put("dtstart","1335432431000");
-     contentEvent.put("dtend","1335436031000");
-
-
-     Uri eventsUri = Uri.parse("content://com.android.calendar/events");
-     getContentResolver().insert(eventsUri, contentEvent);
+    
 }
 }
+
