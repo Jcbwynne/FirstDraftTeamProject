@@ -19,7 +19,6 @@
         android:layout_alignParentTop="true"
         android:layout_marginTop="84dp"
         android:orientation="vertical" >
-
     </LinearLayout>
 
     <LinearLayout
@@ -28,7 +27,15 @@
         android:layout_alignParentTop="true"
         android:layout_toRightOf="@+id/textView1"
         android:orientation="vertical" >
-
     </LinearLayout>
+
+    <ImageButton
+        android:id="@+id/imageButton1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/textView1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="25dp"
+        android:src="@android:drawable/btn_star" />
 
 </RelativeLayout>

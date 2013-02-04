@@ -1,5 +1,7 @@
+//Package name
 package com.example.tweakdroid;
 
+//Possible importable libraries
 import android.app.Activity;
 import android.content.ContentValues;
 import android.database.Cursor;
@@ -32,11 +34,21 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 public class MainActivity extends Activity {
+
+
+	
+	
 /** Called when the activity is first created. */
 @Override
 public void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_main);
+
+    //Define variables
+    Calendar calendar;
+
+    //Make a calendar exist
+    calendar = Calendar.getInstance(Locale.getDefault());
 
     
 }
