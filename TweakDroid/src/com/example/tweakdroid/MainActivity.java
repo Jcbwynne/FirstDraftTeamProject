@@ -46,7 +46,7 @@ public void onCreate(Bundle savedInstanceState) {
 
     //Define variables
     Calendar calendar;
-
+    
     //Make a calendar exist
     calendar = Calendar.getInstance(Locale.getDefault());
 

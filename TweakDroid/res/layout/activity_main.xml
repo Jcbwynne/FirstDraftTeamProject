@@ -1,41 +1,48 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity" >
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/simplebg">"
+	
+	<GridView
+	    android:id="@+id/calendar"
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:layout_below="@+id/selectedDate"
+	    android:numColumns="7" >
+	</GridView>
 
-    <TextView
-        android:id="@+id/textView1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true" >
-    </TextView>
+	
+	<Button
+		android:id="@+id/selectedDate"
+		android:layout_gravity="center"
+		android:background="@drawable/simple_header"
+		android:layout_width="fill_parent"
+		android:layout_height="50sp">
+	</Button>
+	
+	<ImageView
+	    android:id="@+id/preMonth"
+	    android:layout_width="50sp"
+	    android:layout_height="50sp"
+	    android:layout_alignParentLeft="true"
+	    android:src="@drawable/simple_left_arrow" >
+	</ImageView>
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="84dp"
-        android:orientation="vertical" >
-    </LinearLayout>
+	<ImageView
+	    android:id="@+id/nexMonth"
+	    android:layout_width="50sp"
+	    android:layout_height="50sp"
+	    android:layout_alignParentRight="true"
+	    android:src="@drawable/simpleright_arrow" >
+	</ImageView>
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_toRightOf="@+id/textView1"
-        android:orientation="vertical" >
-    </LinearLayout>
-
-    <ImageButton
-        android:id="@+id/imageButton1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/textView1"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="25dp"
-        android:src="@android:drawable/btn_star" />
-
+	<Button
+	    android:id="@+id/curMonth"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:layout_alignBaseline="@+id/selectedDate"
+	    android:layout_alignBottom="@+id/selectedDate"
+	    android:layout_centerHorizontal="true"
+	    android:src="@drawable/simple_header" />
 </RelativeLayout>
