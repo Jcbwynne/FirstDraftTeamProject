@@ -31,6 +31,7 @@ import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.GridView;
 import android.widget.ImageView;
+import android.widget.ListAdapter;
 import android.widget.TextView;
 
 public class MainActivity extends Activity implements OnClickListener {
@@ -42,44 +43,51 @@ public void onCreate(Bundle savedInstanceState) {
     setContentView(R.layout.activity_main);
 
     //Define variables
-    Calendar calendar;
-    int month;
-    int year;
-    int day;
+    Calendar calendar = Calendar.getInstance(Locale.getDefault());
     ImageView previousMonth;
     ImageView nextMonth;
+    Button currentMonthButton;
     GridView calendarGrid;
-    int currentDay;
     
-    //Make a calendar exist
-    calendar = Calendar.getInstance(Locale.getDefault());
-    month = calendar.get(Calendar.MONTH);
-    year = calendar.get(Calendar.YEAR);
-    currentDay = calendar.get(Calendar.DAY_OF_WEEK);
-    
-    //set a previous month view
-	previousMonth = (ImageView) this.findViewById(R.id.preMonth);
-	previousMonth.setOnClickListener(this);
 	
-	//set a next month view
-	nextMonth = (ImageView) this.findViewById(R.id.nexMonth);
-	nextMonth.setOnClickListener(this);
-
 	//Make a calendar view on the grid view
-	//TODO find a way to throw stuff ON the Grid View
 	calendarGrid = (GridView) this.findViewById(R.id.calendar);	
+	/*attempt to throw stuff on grid 
 	calendar.add(Calendar.DAY_OF_YEAR, Calendar.SUNDAY - currentDay);
+	ListAdapter dateAdapter = new ListAdapter();
+	
+	{
 	int gridColumn = 7; 
 	int gridRow = 6;
+	int gridValues[][];
 	for (int i = 0; i<gridRow; i++){
 		for (int j = 0; j< gridColumn;j++){
-			System.out.print(calendar.get(Calendar.DAY_OF_MONTH));
-			System.out.print(" ");
-			calendar.add(Calendar.DAY_OF_YEAR, 1);
+			gridValues[i][j]=(calendar.get(Calendar.DAY_OF_MONTH));
+			}
 		}
-		System.out.print("");
-	}
+	calendarGrid.setAdapter(DateAdapter);
 }
+	*/
+
+	int currentMonth = calendar.get(Calendar.MONTH);
+    int currentYear = calendar.get(Calendar.YEAR);
+    int currentDay = calendar.get(Calendar.DAY_OF_WEEK);
+    
+	
+    	    
+    	    //set a previous month view
+    		previousMonth = (ImageView) this.findViewById(R.id.preMonth);
+    		previousMonth.setOnClickListener(this);
+    		
+    		//set a next month view
+    		nextMonth = (ImageView) this.findViewById(R.id.nexMonth);
+    		nextMonth.setOnClickListener(this);
+
+    		//set a current month
+    		currentMonthButton = (Button) this.findViewById(R.id.curMonth);
+    		currentMonthButton.setText(currentMonth);
+}
+
 
 @Override
 public void onClick(View v) {
