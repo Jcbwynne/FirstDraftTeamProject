@@ -51,7 +51,7 @@ public void onCreate(Bundle savedInstanceState) {
     
 	
 	//Make a calendar view on the grid view
-	calendarGrid = (GridView) this.findViewById(R.id.calendar);	
+	//calendarGrid = (GridView) this.findViewById(R.id.calendar);	
 	/*attempt to throw stuff on grid 
 	calendar.add(Calendar.DAY_OF_YEAR, Calendar.SUNDAY - currentDay);
 	ListAdapter dateAdapter = new ListAdapter();
